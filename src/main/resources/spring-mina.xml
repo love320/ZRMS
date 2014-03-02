@@ -18,7 +18,14 @@
 
 	<!-- 国际化打印i18n文件 -->
 	<bean id="messageI18n" class="com.love320.mina.zrms.i18n.impl.ExceptionMessageSource"></bean>
-
+	
+	<!-- spring 生产工具 -->
+	<bean id="springBeanFactoryUtils" class="com.love320.mina.zrms.utils.SpringBeanFactoryUtils"></bean>
+	
+	<bean id="QtsThreadControl" class="com.love320.mina.zrms.qts.QtsThreadControl" init-method="init" destroy-method="destroy">
+		<property name="spring" ref="springBeanFactoryUtils"></property>
+	</bean>
+	
 	<!-- mina server -->
 	<bean id="serverHandler" class="com.love320.mina.zrms.ServerHandler" >
 		<property name="messageI18n" ref="messageI18n"></property>

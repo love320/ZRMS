@@ -1,4 +1,4 @@
-package com.love320.mina.zrms;
+package com.love320.mina.zrms.go;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;

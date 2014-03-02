@@ -1,4 +1,4 @@
-package com.love320.mina.zrms;
+package com.love320.mina.zrms.go;
 
 
 /*启动入口*/

@@ -18,6 +18,7 @@ import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IdleStatus;
 import org.apache.mina.core.session.IoSession;
 import com.love320.mina.zrms.i18n.MessageI18n;
+import com.love320.mina.zrms.qts.QtsQueue;
 
 /** 
  * @ClassName: ServerHandler 
@@ -80,8 +81,7 @@ public class ServerHandler extends IoHandlerAdapter {
 	 * 收到的消息时
 	 */
 	@Override
-	public void messageReceived(IoSession session, Object message)
-			throws Exception {
+	public void messageReceived(IoSession session, Object message) throws Exception {
 
 		log.debug(messageI18n.message("10005",((InetSocketAddress) session.getRemoteAddress()).getAddress().getHostAddress()));
 		
@@ -94,7 +94,7 @@ public class ServerHandler extends IoHandlerAdapter {
 		session.setAttribute("ip", remoteAddress);
 		
 		//执行....
-		
+		QtsQueue.setO(message);//加入队列
 	}
 
 	/**
