@@ -12,7 +12,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 import com.love320.mina.zrms.i18n.Constant;
-import com.love320.mina.zrms.i18n.MessageSource;
+import com.love320.mina.zrms.i18n.MessageI18n;
 
 
 /** 
@@ -22,7 +22,7 @@ import com.love320.mina.zrms.i18n.MessageSource;
  * @date 2012-8-5 下午03:09:09 
  *  
  */
-public class ExceptionMessageSource implements MessageSource {
+public class ExceptionMessageSource implements MessageI18n {
 	
 	private String name = Constant.ERROR_FILE;//信息文件
 

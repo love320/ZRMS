@@ -16,7 +16,7 @@ import java.util.Locale;
  * @date 2012-8-5 下午03:01:07 
  *  获取国际信息文件
  */
-public interface MessageSource {
+public interface MessageI18n {
 	
 	public String message(String key);//通过 key 获取配置文件信息(默认配置文件)
 	

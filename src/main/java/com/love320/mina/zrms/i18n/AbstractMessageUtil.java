@@ -19,7 +19,7 @@ import java.util.Locale;
  */
 public abstract class AbstractMessageUtil {
 	
-	protected abstract MessageSource MessageSourceFactoryMethod();
+	protected abstract MessageI18n MessageSourceFactoryMethod();
 	
 	public String message(String module, String code)
     {
@@ -39,13 +39,13 @@ public abstract class AbstractMessageUtil {
      */
     public String message(String module, String code,Object[] arguments, Locale locale)
     {
-    	MessageSource messageSource = MessageSourceFactoryMethod();
+    	MessageI18n messageSource = MessageSourceFactoryMethod();
         return information(module, code, messageSource.message(code, arguments, locale));
     }
     
 	public String message(String module, String code,String errMessage)
     {
-		MessageSource messageSource = MessageSourceFactoryMethod();
+		MessageI18n messageSource = MessageSourceFactoryMethod();
 		if(errMessage == null) {
 			errMessage = messageSource.message(code, null, Locale.getDefault());
 		}else{

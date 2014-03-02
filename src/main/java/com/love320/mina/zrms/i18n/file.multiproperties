@@ -26,15 +26,73 @@
             <Name>10001</Name>
             <Disabled>false</Disabled>
             <MultiLine>false</MultiLine>
-            <Value disabled="false">错误信息</Value>
+            <DefaultValue>错误信息</DefaultValue>
+            <Value disabled="true"></Value>
             <Value disabled="false">Error</Value>
         </Property>
         <Property>
             <Name>10002</Name>
             <Disabled>false</Disabled>
             <MultiLine>false</MultiLine>
-            <Value disabled="false">实例BeanString模式{0}对象失败-配置文件或类有失误</Value>
+            <DefaultValue>实例BeanString模式{0}对象失败-配置文件或类有失误</DefaultValue>
+            <Value disabled="true"></Value>
             <Value disabled="false">BeanString-Mode-{0}</Value>
+        </Property>
+        <Property>
+            <Name>10003</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <DefaultValue>会话发生异常,关闭-{0}</DefaultValue>
+            <Value disabled="true"></Value>
+            <Value disabled="false">session occured exception, so close it.-{0}</Value>
+        </Property>
+        <Property>
+            <Name>10004</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <DefaultValue>远程客户端({0})连接。</DefaultValue>
+            <Value disabled="true"></Value>
+            <Value disabled="false">remote client [{0}] connected.</Value>
+        </Property>
+        <Property>
+            <Name>10005</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <DefaultValue>客户端{0}连接成功！</DefaultValue>
+            <Value disabled="true"></Value>
+            <Value disabled="false">client {0} connection is successful</Value>
+        </Property>
+        <Property>
+            <Name>10006</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <DefaultValue>会话关闭</DefaultValue>
+            <Value disabled="true"></Value>
+            <Value disabled="false">sessionClosed</Value>
+        </Property>
+        <Property>
+            <Name>10007</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <DefaultValue>会话空闲,所以断开</DefaultValue>
+            <Value disabled="true"></Value>
+            <Value disabled="false">session idle, so disconnecting......</Value>
+        </Property>
+        <Property>
+            <Name>10008</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <DefaultValue>发送消息...</DefaultValue>
+            <Value disabled="true"></Value>
+            <Value disabled="false">message Sent ...</Value>
+        </Property>
+        <Property>
+            <Name>10009</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <DefaultValue>会话打开...</DefaultValue>
+            <Value disabled="true"></Value>
+            <Value disabled="false">session Opened ...</Value>
         </Property>
     </Records>
 </MultiProperties>

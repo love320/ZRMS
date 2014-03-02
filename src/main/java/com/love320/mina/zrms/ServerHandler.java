@@ -17,9 +17,7 @@ import org.apache.log4j.Logger;
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IdleStatus;
 import org.apache.mina.core.session.IoSession;
-
-import com.love320.mina.zrms.i18n.MessageSource;
-import com.love320.mina.zrms.i18n.impl.ExceptionMessageSource;
+import com.love320.mina.zrms.i18n.MessageI18n;
 
 /** 
  * @ClassName: ServerHandler 
@@ -35,6 +33,12 @@ public class ServerHandler extends IoHandlerAdapter {
 	 */
 	private final int IDLE = 300;
 	
+	private MessageI18n messageI18n;
+
+	public void setMessageI18n(MessageI18n messageI18n) {
+		this.messageI18n = messageI18n;
+	}
+
 	/**
 	 * 日志记录
 	 */
@@ -59,7 +63,7 @@ public class ServerHandler extends IoHandlerAdapter {
     public void exceptionCaught(IoSession session, Throwable cause)throws Exception {
 		SessionContext.remove(session);//移出
         session.close(false);//关闭会话
-        log.debug("session occured exception, so close it." + cause.getMessage());//打印异常信息
+        log.debug(messageI18n.message("10003",cause.getMessage()));//打印异常信息
     }
 	
 	/**
@@ -67,7 +71,7 @@ public class ServerHandler extends IoHandlerAdapter {
 	 */
 	@Override
 	public void sessionCreated(IoSession session) {
-		log.debug("remote client ["+session.getRemoteAddress().toString()+"] connected.");
+		log.debug(messageI18n.message("10004",session.getRemoteAddress().toString()));
 		//session.write("Welcome");
 		sessions.add(session);//添加会话
 	}
@@ -79,10 +83,10 @@ public class ServerHandler extends IoHandlerAdapter {
 	public void messageReceived(IoSession session, Object message)
 			throws Exception {
 
-		log.debug("客户端"+((InetSocketAddress) session.getRemoteAddress()).getAddress().getHostAddress()+"连接成功！");
-
+		log.debug(messageI18n.message("10005",((InetSocketAddress) session.getRemoteAddress()).getAddress().getHostAddress()));
+		
 		Date date = new Date();
-		session.write(date.toString());
+		//session.write(date.toString());
 		session.setAttribute(session.getRemoteAddress(), message);
 		
 		session.setAttribute("type", message);
@@ -98,7 +102,7 @@ public class ServerHandler extends IoHandlerAdapter {
 	 */
 	@Override
 	public void sessionClosed(IoSession session) throws Exception {
-		 log.debug("sessionClosed.");
+		 log.debug(messageI18n.message("10006"));
 		 SessionContext.remove(session);//移出
 		 sessions.remove(session);//移出
 	}
@@ -109,9 +113,8 @@ public class ServerHandler extends IoHandlerAdapter {
 	@Override
 	public void sessionIdle(IoSession session, IdleStatus status)throws Exception {
 		SessionContext.remove(session);//移出
-		log.debug("session idle, so disconnecting......");
         session.close(false);//关闭会话
-        log.debug("disconnected.");
+        log.debug(messageI18n.message("10007"));
 	}
 	
 	/**
@@ -119,7 +122,7 @@ public class ServerHandler extends IoHandlerAdapter {
 	 */
 	@Override
 	public void messageSent(IoSession session, Object message) throws Exception {
-		 log.debug("messageSent.");
+		 log.debug(messageI18n.message("10008"));
     }
 	
 	/**
@@ -127,7 +130,7 @@ public class ServerHandler extends IoHandlerAdapter {
 	 */
 	@Override
     public void sessionOpened(IoSession session) throws Exception {
-		log.debug("sessionOpened.");
+		 log.debug(messageI18n.message("10009"));
         session.getConfig().setIdleTime(IdleStatus.BOTH_IDLE, IDLE);//设置空闲
     }
 
