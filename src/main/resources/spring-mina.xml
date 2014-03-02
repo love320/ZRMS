@@ -17,7 +17,7 @@
 	<context:property-placeholder location="classpath:application.properties" />
 
 	<!-- mina server -->
-	<bean id="serverHandler" class="com.love320.mina.app.ServerHandler" >
+	<bean id="serverHandler" class="com.love320.mina.zrms.ServerHandler" >
 	</bean>
 	
 	<!-- executorFilter多线程处理 -->
@@ -29,7 +29,7 @@
 	
 	<bean id="codecFilter" class="org.apache.mina.filter.codec.ProtocolCodecFilter">
 		<constructor-arg>
-			<bean class="com.love320.mina.app.ServerCodeFactory" />
+			<bean class="com.love320.mina.zrms.ServerCodeFactory" />
 		</constructor-arg>
 	</bean>
 	

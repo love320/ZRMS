@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MultiProperties xmlns="hu.skzs.multiproperties">
+    <Version>1.2</Version>
+    <Name>language</Name>
+    <Description>国际化配置文件</Description>
+    <Handler>Java Properties Handler</Handler>
+    <Columns>
+        <Key>
+            <Width>200</Width>
+        </Key>
+        <Column>
+            <Name>zh_CN</Name>
+            <Description></Description>
+            <Width>309</Width>
+            <HandlerConfiguration>/zrms/src/main/java/com/love320/mina/zrms/i18n/error_zh_CN.properties|false|false|false|false</HandlerConfiguration>
+        </Column>
+        <Column>
+            <Name>en_US</Name>
+            <Description></Description>
+            <Width>150</Width>
+            <HandlerConfiguration>/zrms/src/main/java/com/love320/mina/zrms/i18n/error_en_US.properties|false|false|false|false</HandlerConfiguration>
+        </Column>
+    </Columns>
+    <Records>
+        <Property>
+            <Name>10001</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">错误信息</Value>
+            <Value disabled="false">Error</Value>
+        </Property>
+        <Property>
+            <Name>10002</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">实例BeanString模式{0}对象失败-配置文件或类有失误</Value>
+            <Value disabled="false">BeanString-Mode-{0}</Value>
+        </Property>
+    </Records>
+</MultiProperties>

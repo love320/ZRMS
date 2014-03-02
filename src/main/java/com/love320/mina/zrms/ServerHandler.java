@@ -18,6 +18,9 @@ import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IdleStatus;
 import org.apache.mina.core.session.IoSession;
 
+import com.love320.mina.zrms.i18n.MessageSource;
+import com.love320.mina.zrms.i18n.impl.ExceptionMessageSource;
+
 /** 
  * @ClassName: ServerHandler 
  * @Description: 服务主处理器
@@ -36,7 +39,7 @@ public class ServerHandler extends IoHandlerAdapter {
 	 * 日志记录
 	 */
 	private final Logger log = Logger.getLogger(ServerHandler.class.getName());
-	 
+	
 	/**
 	 * session集合
 	 */
